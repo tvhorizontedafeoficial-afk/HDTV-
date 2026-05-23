@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Weather Dashboard</h1>
+            <div class="search-container">
+                <input 
+                    type="text" 
+                    id="searchInput" 
+                    placeholder="Enter city name..." 
+                    class="search-input"
+                >
+                <button id="searchBtn" class="search-btn">Search</button>
+            </div>
+        </header>
+
+        <div id="errorMessage" class="error-message"></div>
+        <div id="loadingSpinner" class="loading-spinner hidden">
+            <div class="spinner"></div>
+            <p>Loading weather data...</p>
+        </div>
+
+        <main>
+            <!-- Current Weather Section -->
+            <section id="currentWeatherSection" class="weather-section hidden">
+                <div class="current-weather">
+                    <div class="weather-header">
+                        <div>
+                            <h2 id="cityName"></h2>
+                            <p id="weatherDate"></p>
+                        </div>
+                        <div class="weather-icon-large">
+                            <img id="weatherIconLarge" src="" alt="Weather icon">
+                        </div>
+                    </div>
+
+                    <div class="current-temp">
+                        <div class="temp-main">
+                            <span id="temperature" class="temp-value"></span>
+                            <span class="temp-unit">°C</span>
+                        </div>
+                        <p id="weatherDescription" class="weather-desc"></p>
+                    </div>
+
+                    <div class="weather-details-grid">
+                        <div class="detail-card">
+                            <p class="detail-label">Feels Like</p>
+                            <p class="detail-value"><span id="feelsLike"></span>°C</p>
+                        </div>
+                        <div class="detail-card">
+                            <p class="detail-label">Humidity</p>
+                            <p class="detail-value"><span id="humidity"></span>%</p>
+                        </div>
+                        <div class="detail-card">
+                            <p class="detail-label">Wind Speed</p>
+                            <p class="detail-value"><span id="windSpeed"></span> m/s</p>
+                        </div>
+                        <div class="detail-card">
+                            <p class="detail-label">Pressure</p>
+                            <p class="detail-value"><span id="pressure"></span> hPa</p>
+                        </div>
+                        <div class="detail-card">
+                            <p class="detail-label">UV Index</p>
+                            <p class="detail-value"><span id="uvIndex"></span></p>
+                        </div>
+                        <div class="detail-card">
+                            <p class="detail-label">Visibility</p>
+                            <p class="detail-value"><span id="visibility"></span> km</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Forecast Section -->
+            <section id="forecastSection" class="weather-section hidden">
+                <h3>5-Day Forecast</h3>
+                <div id="forecastContainer" class="forecast-container">
+                    <!-- Forecast cards will be generated here -->
+                </div>
+            </section>
+
+            <!-- Hourly Forecast Section -->
+            <section id="hourlySection" class="weather-section hidden">
+                <h3>Hourly Forecast</h3>
+                <div id="hourlyContainer" class="hourly-container">
+                    <!-- Hourly cards will be generated here -->
+                </div>
+            </section>
+        </main>
+
+        <footer>
+            <p>Weather data provided by <a href="https://openweathermap.org" target="_blank">OpenWeatherMap</a></p>
+        </footer>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
